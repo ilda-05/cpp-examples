@@ -20,6 +20,11 @@ int main(){
     std::thread t1(hello_thread);
     std::thread t2(world_thread);
 
+    /* 
+    *   In this case the main thread will not wait 
+    *   for the execution of the first and the second thread
+    *   to end, so the main thread could finish first
+    */
     t1.detach();
     t2.detach();
 
